@@ -37,7 +37,9 @@ Record your responses inside the fenced code blocks below each question.
     the syntax (code that is written) to render this component inside that template?
 
     ```html
-    <!-- your response here -->
+    {{#each model as |contact|}}
+      {{my-contact contact=contact}}
+    {{/each}}
     ```
 
 1.  Each contact has multiple phone numbers. Suppose you also have '`my-phone`'
@@ -46,5 +48,7 @@ Record your responses inside the fenced code blocks below each question.
     pass it data?
 
     ```html
-    <!-- your response here -->
+    {{#each contact.numbers as |phone|}}
+      {{my-phone phone=phone}}
+    {{/each}}
     ```
